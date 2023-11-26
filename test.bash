@@ -13,7 +13,7 @@ out=$(seq 5 | ./plus)
 [ "${out}" = "合計: 15.0, 総乗: 120.0"  ] || ng ${LINENO}
 
 out=$(seq 1 2 5 | ./plus)
-[ "${out}" = "合計: 9.0, 総乗: 45.0" ] || ng $LINENO
+[ "${out}" = "合計: 9.0, 総乗: 15.0" ] || ng $LINENO
 　
 [ "$res" = 0 ] && echo OK
 exit $res
