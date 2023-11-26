@@ -2,12 +2,19 @@
 # SPDX-FileCopyrightText: 2023 Sho Yoshida　　　　　
 # SPDX-License-Identifier: BSD-3-Clause
 import sys
-ans = 0
+
+ans_sum = 0
+ans_product = 1
+
 for line in sys.stdin:
     try:
-        ans += int(line)
-    except:
-        ans += float(line)
-print(ans)
-#unko:wq
+        num = float(line)
+        ans_sum += num
+        ans_product *= num
+    except ValueError:
+        print(f"数値以外のものが入力されています: {line.strip()}")
+
+print(f"合計: {ans_sum}")
+print(f"総和: {ans_product}")
+
 
