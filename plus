@@ -14,7 +14,6 @@ for line in sys.stdin:
     except ValueError:
         print(f"数値以外のものが入力されています: {line.strip()}")
 
-print(f"合計: {ans_sum}")
-print(f"総乗: {ans_product}")
+print(f"合計: {ans_sum}, 総乗: {ans_product}")
 
 
