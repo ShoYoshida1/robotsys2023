@@ -14,6 +14,9 @@ out=$(seq 5 | ./plus)
 
 out=$(seq 1 2 5 | ./plus)
 [ "${out}" = "合計: 9.0, 総乗: 15.0" ] || ng $LINENO
+
+out=$(echo abc | ./plus)
+[ "${out}" = "数値以外のものが入力されています: abc$'\n'合計: 0, 総乗: 1" ] || ng $LINENO
 　
 [ "$res" = 0 ] && echo OK
 exit $res
