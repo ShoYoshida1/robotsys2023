@@ -22,6 +22,12 @@ out=$(seq 1000 | ./plus)
 out=$(seq 1 2 5 | ./plus)
 [ "${out}" = "合計: 9.0, 総乗: 15.0" ] || ng $LINENO
 
+out=$(seq -1 2 3 | ./plus)
+[ "${out}" = "合計: 3.0, 総乗: -3.0" ] || ng $LINENO
+
+out=$(seq 0.1 0.2 0.5 | ./plus)
+[ "${out}" = "合計: 0.9, 総乗: 0.015" ] || ng $LINENO
+
 out=$(echo abc | ./plus)
 [ "${out}" = "数値以外のものが入力されています: abc
 合計: 0, 総乗: 1" ] || ng $LINENO
