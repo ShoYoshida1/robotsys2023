@@ -2,15 +2,22 @@
 # SPDX-FileCopyrightText: 2023 Sho Yoshida　　　　　
 # SPDX-License-Identifier: BSD-3-Clause
 import sys
+import math
 
 ans_sum = 0
 ans_product = 1
+overflow_threshold = 1e300
 
 for line in sys.stdin:
     try:
         num = float(line)
         ans_sum += num
         ans_product *= num
+
+        if ans_product > overflow_threshold:
+            print(f"総乗がオーバーフロー: {ans_product:.2e}")
+            break
+
     except ValueError:
         print(f"数値以外のものが入力されています: {line.strip()}")
 
