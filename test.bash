@@ -26,7 +26,7 @@ out=$(echo abc | ./plus)
 [ "${out}" = "数値以外のものが入力されています: abc
 合計: 0, 総乗: 1" ] || ng $LINENO
 
-out=$(echo abc | ./plus)
+out=$(echo   | ./plus)
 [ "${out}" = "数値以外のものが入力されています:  
 合計: 0, 総乗: 1" ] || ng $LINENO
 　
