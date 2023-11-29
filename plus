@@ -10,6 +10,6 @@ for line in sys.stdin:
         ans_sum += int(line)
         ans_product *= int(line)
     except:
-        ans_sum += float(line)
+        ans_sum += Decimal(line)
         ans_product *= Decimal(line)
 print(f"合計: {ans_sum}, 総乗: {ans_product}")

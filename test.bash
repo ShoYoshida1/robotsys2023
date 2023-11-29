@@ -28,6 +28,12 @@ out=$(seq 0.1 0.2 0.5 | ./plus)
 out=$(seq -0.1 0.2 0.3 | ./plus)
 [ "${out}" = "合計: 0.3, 総乗: -0.003"  ] || ng ${LINENO}
 
+out=$(seq 0.1 0.2 0.5 | ./plus)
+[ "${out}" = "合計: 0.9, 総乗: 0.015"  ] || ng ${LINENO}
+
+out=$(seq 0.1 0.2 0.5 | ./plus)
+[ "${out}" = "合計: 0.9, 総乗: 0.015"  ] || ng ${LINENO}
+
 ### STRANGE INPUT ###
 out=$(echo | ./plus)
 [ "$?" = 1 ] || ng ${LINENO}
