@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2023 Sho Yoshida　　　　　
 # SPDX-License-Identifier: BSD-3-Clause
 import sys
+from decimal import Decimal
 ans_sum = 0
 ans_product = 1
 for line in sys.stdin:
@@ -10,5 +11,5 @@ for line in sys.stdin:
         ans_product *= int(line)
     except:
         ans_sum += float(line)
-        ans_product *=float(line)
+        ans_product *= Decimal(line)
 print(f"合計: {ans_sum}, 総乗: {ans_product}")
